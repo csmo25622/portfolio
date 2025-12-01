@@ -5,186 +5,90 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Portfolio - Moe Nakajima</title>
     <style>
-        /* ベースリセット */
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
+        /* スマート＆ミニマルスタイル */
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+    font-family: "Helvetica Neue", Arial, sans-serif;
+    background-color: #ffffff;
+    color: #2c2c2c;
+    line-height: 1.9; /* 行間を広めに */
+    letter-spacing: 0.03em;
+}
+.container { max-width: 800px; margin: 0 auto; padding: 0 40px; }
 
-        body {
-            font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
-            background-color: #f4f8fb;
-            color: #333;
-            line-height: 1.6;
-            -webkit-font-smoothing: antialiased;
-        }
+/* ヘッダー */
+header {
+    background-color: #fff;
+    padding: 40px 0 20px;
+    margin-bottom: 40px;
+}
+h1.site-title { font-size: 1.2rem; font-weight: normal; color: #888; text-transform: uppercase; letter-spacing: 0.1em; }
 
-        /* ユーティリティ */
-        .container {
-            max-width: 960px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
+main { padding: 0 0 80px; }
+section { margin-bottom: 100px; }
 
-        /* ヘッダー */
-        header {
-            background-color: #0056b3;
-            color: #fff;
-            padding: 20px 0;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-            position: sticky;
-            top: 0;
-            z-index: 100;
-        }
+/* タイトル周り */
+h2.section-title {
+    font-size: 2.2rem;
+    color: #000;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 20px;
+    margin-bottom: 50px;
+    font-weight: 300; /* 細字で上品に */
+}
+h2.section-title::after { content: none; }
 
-        header .container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
+/* プロフィール */
+.profile-card {
+    background: transparent; /* 背景なし */
+    box-shadow: none;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    gap: 50px;
+}
+.profile-icon {
+    width: 120px; height: 120px;
+    background-color: #f5f5f0; /* グレージュ */
+    border-radius: 50%;
+    display: flex; justify-content: center; align-items: center;
+    color: #555;
+}
+.profile-icon svg { width: 50px; height: 50px; fill: currentColor; }
+.profile-info h3 { font-size: 1.8rem; margin-bottom: 5px; font-weight: 500; }
+.profile-info p { font-size: 1rem; color: #888; font-style: italic; margin-bottom: 15px; }
+.tag {
+    display: inline-block;
+    background-color: #2c2c2c; /* 黒背景 */
+    color: #fff;
+    padding: 6px 16px;
+    border-radius: 4px;
+    font-size: 0.8rem;
+    margin-top: 5px;
+    font-weight: normal;
+}
 
-        h1.site-title {
-            font-size: 1.5rem;
-            font-weight: bold;
-            letter-spacing: 0.05em;
-        }
+/* ガクチカ */
+.gakuchika-content {
+    background: #fafafa; /* 非常に薄いグレー */
+    padding: 50px;
+    border-radius: 4px;
+    box-shadow: none;
+    border-left: none;
+}
+.gakuchika-content h3 { font-size: 1.3rem; margin-bottom: 30px; font-weight: bold; border-left: 4px solid #2c2c2c; padding-left: 15px; }
+.highlight {
+    background: linear-gradient(transparent 60%, #e0e0e0 60%); /* マーカー風 */
+    color: inherit;
+    font-weight: bold;
+}
 
-        /* メインコンテンツ */
-        main {
-            padding: 60px 0;
-        }
+footer { text-align: center; padding: 40px 0; font-size: 0.8rem; color: #aaa; }
 
-        section {
-            margin-bottom: 60px;
-            animation: fadeIn 0.8s ease-in-out;
-        }
-
-        h2.section-title {
-            font-size: 1.8rem;
-            color: #0056b3;
-            border-bottom: 2px solid #e1e8ed;
-            padding-bottom: 10px;
-            margin-bottom: 30px;
-            position: relative;
-        }
-
-        h2.section-title::after {
-            content: '';
-            position: absolute;
-            bottom: -2px;
-            left: 0;
-            width: 60px;
-            height: 2px;
-            background-color: #0056b3;
-        }
-
-        /* 自己紹介セクション */
-        .profile-card {
-            background: #fff;
-            border-radius: 8px;
-            padding: 40px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
-            display: flex;
-            align-items: center;
-            gap: 40px;
-        }
-
-        .profile-icon {
-            width: 100px;
-            height: 100px;
-            background-color: #e3f2fd;
-            border-radius: 50%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            flex-shrink: 0;
-            color: #0056b3;
-        }
-        
-        /* インラインSVGアイコン */
-        .profile-icon svg {
-            width: 50px;
-            height: 50px;
-            fill: currentColor;
-        }
-
-        .profile-info h3 {
-            font-size: 1.8rem;
-            margin-bottom: 10px;
-        }
-
-        .profile-info p {
-            font-size: 1.1rem;
-            color: #666;
-        }
-
-        .tag {
-            display: inline-block;
-            background-color: #e3f2fd;
-            color: #0056b3;
-            padding: 4px 12px;
-            border-radius: 20px;
-            font-size: 0.85rem;
-            margin-top: 10px;
-            font-weight: bold;
-        }
-
-        /* ガクチカセクション */
-        .gakuchika-content {
-            background: #fff;
-            padding: 40px;
-            border-radius: 8px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
-            border-left: 5px solid #0056b3;
-        }
-
-        .gakuchika-text {
-            font-size: 1.05rem;
-            text-align: justify;
-        }
-
-        .highlight {
-            font-weight: bold;
-            color: #0056b3;
-        }
-
-        /* フッター */
-        footer {
-            background-color: #333;
-            color: #fff;
-            text-align: center;
-            padding: 20px 0;
-            margin-top: auto;
-        }
-
-        footer p {
-            font-size: 0.9rem;
-            opacity: 0.8;
-        }
-
-        /* レスポンシブ対応 */
-        @media (max-width: 768px) {
-            .profile-card {
-                flex-direction: column;
-                text-align: center;
-                padding: 30px 20px;
-            }
-
-            h2.section-title {
-                font-size: 1.5rem;
-            }
-
-            .gakuchika-content {
-                padding: 25px;
-            }
-        }
-
-        /* アニメーション */
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
+@media (max-width: 768px) {
+    .profile-card { flex-direction: column; text-align: center; gap: 20px; }
+    .container { padding: 0 20px; }
+}
     </style>
 </head>
 <body>
