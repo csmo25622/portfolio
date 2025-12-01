@@ -89,6 +89,31 @@ footer { text-align: center; padding: 40px 0; font-size: 0.8rem; color: #aaa; }
     .profile-card { flex-direction: column; text-align: center; gap: 20px; }
     .container { padding: 0 20px; }
 }
+
+/* --- Works画像のスタイル --- */
+        .work-image-container {
+            margin: 20px 0;
+            background-color: #f9f9f9; /* 画像の背景に薄い色を敷く */
+            padding: 10px;
+            border-radius: 8px;
+            border: 1px solid #eee;
+        }
+
+        .work-image {
+            width: 100%;       /* 親要素に合わせて横幅いっぱいに */
+            height: auto;      /* 高さは自動調整 */
+            display: block;
+            border-radius: 4px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1); /* 軽く影をつけて浮き上がらせる */
+            border: 1px solid #ddd; /* 黒い画像なので、境界線をつけて見やすく */
+        }
+
+        .work-image-container figcaption {
+            font-size: 0.85rem;
+            color: #888;
+            margin-top: 10px;
+            text-align: center; /* キャプションは中央寄せ */
+        }
     </style>
 </head>
 <body>
@@ -142,6 +167,41 @@ footer { text-align: center; padding: 40px 0; font-size: 0.8rem; color: #aaa; }
                     </p>
                 </div>
             </div>
+        </section>
+
+	<section id="works">
+            <h2 class="section-title">Works</h2>
+
+            <div class="work-item">
+                <h3>入力数の階乗計算プログラム</h3>
+                <p class="work-desc">
+                    授業課題にて作成した、C言語による階乗計算プログラムです。
+                    ユーザーが入力した整数（n）に対し、1からnまでの積を計算して出力します。
+                    変数の扱いやループ処理の基礎を学び、正しく計算結果が出力されることを確認しました。
+                </p>
+                
+                <figure class="work-image-container">
+                    <img src="c-factorial.png" alt="C言語プログラムの実行結果画面" class="work-image">
+                    <figcaption>実行結果：10の階乗（3,628,800）が正しく出力されている様子</figcaption>
+                </figure>
+
+                <div class="work-tech">
+                    <span class="tag">C言語</span>
+                    <span class="tag">Visual Studio</span>
+                </div>
+            </div>
+            <div class="work-item">
+                <h3>My Portfolio Site</h3>
+                <p class="work-desc">
+                    現在閲覧いただいているこのポートフォリオサイトです。
+                    HTML/CSSを使用し、シンプルで情報の伝わりやすさを重視したデザイン（ミニマルデザイン）を意識してコーディングしました。
+                </p>
+                <div class="work-tech">
+                    <span class="tag">HTML</span>
+                    <span class="tag">CSS</span>
+                </div>
+            </div>
+
         </section>
     </main>
 
